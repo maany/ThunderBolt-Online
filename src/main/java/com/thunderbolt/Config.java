@@ -11,7 +11,7 @@ public class Config {
 		Connection con=null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			 con = DriverManager.getConnection("jdbc:mysql://${OPENSHIFT_MYSQL_DB_HOST}:3306/${OPENSHIFT_APP_NAME}","adminGLgPs7R","wsCktYRn5H8g");
+			 con = DriverManager.getConnection("jdbc:mysql://"+System.getenv("OPENSHIFT_MYSQL_DB_HOST")+":"+System.getenv("OPENSHIFT_MYSQL_DB_PORT")+"/thunderbolt",System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"),System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD"));
 			 System.out.println("Connection estd with remote database");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

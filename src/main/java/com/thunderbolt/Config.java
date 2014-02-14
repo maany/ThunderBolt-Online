@@ -19,4 +19,18 @@ public class Config {
 		}
 		return con;
 	}
+	
+	public static Connection getLocalDB() throws SQLException
+	{
+		Connection con=null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			 con = DriverManager.getConnection("jdbc:mysql://localhost/library","root","root123");
+			 System.out.println("Connection estd with local database");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return con;
+	}
 }

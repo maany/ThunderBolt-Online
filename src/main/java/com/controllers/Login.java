@@ -44,7 +44,14 @@ public class Login extends HttpServlet {
 		out.write("hello from servlet <br>");
 		String roll = request.getParameter("roll");
 		out.println(roll);
-		
+		try {
+			Connection con = Config.getRemoteDB();
+			out.println("inside try");
+		} catch (SQLException e) {
+			out.println("inside catch");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		out.write("try skipped??");
 	}
 

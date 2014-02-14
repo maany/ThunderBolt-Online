@@ -42,7 +42,8 @@ public class Login extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		out.write("hello from servlet <br>");
-		
+		String roll = request.getParameter("roll");
+		out.println(roll);
 		try {
 			out.write("trying to connect");
 			Connection con = Config.getRemoteDB();

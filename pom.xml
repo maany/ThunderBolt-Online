@@ -37,12 +37,11 @@
 	</properties>
 	<dependencies>
 		<dependency>
-     		 <groupId>servlet</groupId>
-      		<artifactId>servlet-api</artifactId>
-      		<version>1.0</version>
-      		<scope>system</scope>
-        <systemPath>${basedir}\servlet-api.jar</systemPath>
-		</dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>

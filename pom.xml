@@ -41,7 +41,7 @@
       		<artifactId>servlet-api</artifactId>
       		<version>1.0</version>
       		<scope>system</scope>
-        <systemPath>${basedir}/servlet-api.jar</systemPath>
+        <systemPath>${basedir}\servlet-api.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>

@@ -41,16 +41,8 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		out.write("hello from servlet <br>");
-		try {
-			out.write("trying to connect \n");
-			Connection remoteDB = Config.getRemoteDB();
-			
-			out.write("Connection estd");
-		} catch (SQLException e) {
-			out.write(e.getMessage());
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		
 	}
 
 }

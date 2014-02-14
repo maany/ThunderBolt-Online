@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=../../app-root/repo/servlet-api.jar -DgroupId=servlet -DartifactId=servlet-api -Dversion=1.0 -Dpackaging=jar

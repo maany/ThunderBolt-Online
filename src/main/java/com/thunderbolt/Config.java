@@ -10,7 +10,7 @@ public class Config {
 	{
 		Connection con=null;
 		try {
-		//	Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			 con = DriverManager.getConnection("mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/thunderbolt","adminGLgPs7R","wsCktYRn5H8g");
 			 System.out.println("Connection estd with remote database");
 		} catch (Exception e) {

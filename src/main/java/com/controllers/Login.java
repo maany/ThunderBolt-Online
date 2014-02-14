@@ -39,13 +39,15 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Connection con = null;
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.write("hello from servlet <br>");
 		String roll = request.getParameter("roll");
-		out.println(roll);
+		out.println(roll + "<br>");
 		try {
-			Connection con = Config.getRemoteDB();
+			con = Config.getRemoteDB();
+			if(con!=null)
 			out.println("inside try");
 		} catch (SQLException e) {
 			out.println("inside catch");

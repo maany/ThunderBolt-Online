@@ -9,10 +9,5 @@
  	   <welcome-file>/login.jsp</welcome-file>
  	   <welcome-file>login.jsp</welcome-file>
  	 </welcome-file-list>
-         
-	<servlet>
-	<servlet-name>loginController</servlet-name>
-	<servlet-class>com.controllers.</servlet-class>
-	</servlet>
 </web-app>
 

@@ -1,6 +1,7 @@
 package com.controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -40,6 +41,8 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			Connection remoteDB = Config.getRemoteDB();
+			PrintWriter out = response.getWriter();
+			out.write("Connection estd");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

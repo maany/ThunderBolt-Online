@@ -5,7 +5,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          metadata-complete="false">
-
+ 	 <welcome-file-list>
+ 	   <welcome-file>login.jsp</welcome-file>
+ 	 </welcome-file-list>
          
+	<servlet>
+	<servlet-name>loginController</servlet-name>
+	<servlet-class>com.controllers.LoginController</servlet-class>
+	</servlet>
 </web-app>
 

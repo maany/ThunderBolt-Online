@@ -13,23 +13,33 @@ int roll = new Integer(session.getAttribute("roll").toString());
 %>
 
 <body>
-<div id = 'container' style="width:1500px">
-
-<div id = 'header' style="height:100" >
+<div id = 'container' style="width:1500px;background-color:black">
+<div id='container' style="width:1000px" align='center'>
+<div id = 'header' style="height:100px" align='center'>
 <h1>NIT Delhi Library</h1>
 </div>
 
-<div class="menu" style = "width:100;float:left;background-color:grey">
+<div class="menu" style = "width:100px;float:left;background-color:grey">
 <a href="account"><%=firstName %></a><br>
 <a href="dashboard">Dashboard</a><br>
-<a href="catalog">Catalog</a><br>
+<a href="redirect?navPage=3">Catalog</a><br>
 <a href="settings">Settings</a><br>
 <a href="logout">Logout</a><br>
 </div>
-<div class="content" style = "float:left">
-<% // in session add a var page, page name will decide what to jsp:include %>
+<div class="content" style = "float:left;width:900">
+<% // in session add a var page, page name will decide what to jsp:include 
+int navPage = (Integer)session.getAttribute("navPage");
+if(navPage==3)
+{
+%>
+<jsp:include page="catalog.jsp"></jsp:include>
+<%} else if (navPage==4) {
+System.out.println("Welcome.jsp: navPage= 4; if this is displayed.. means no major error in catalog");
+%>
+<jsp:include page="catalog_display.jsp"></jsp:include>
+<%} %>
 </div>
 </div>
-
+</div>
 </body>
 </html>

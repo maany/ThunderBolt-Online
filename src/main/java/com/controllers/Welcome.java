@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.models.CatalogModel;
 import com.models.WelcomeModel;
 
 /**
@@ -47,8 +48,9 @@ public class Welcome extends HttpServlet {
 		String firstName = welcomeBean.getFirstName();
 		session.setAttribute("firstName",firstName);
 		
-		// hand over control to view i.e jsp
+		// hand over control to view i.e jsp and initialize flags
 		RequestDispatcher rd = request.getRequestDispatcher("/welcome.jsp");
+		CatalogModel.proceedFlag=0; // if request to catalog goes from this page, then flag value is 0;
 		rd.forward(request,response);
 	}
 

@@ -74,6 +74,7 @@ public class Login extends HttpServlet {
 				System.out.println("Login.java = Details for query \n" + query.toString()+ "\n roll from db " + rs.getInt("roll_no") + " and password" + rs.getString("password"));
 				session = request.getSession();
 				session.setAttribute("roll",roll);
+				session.setAttribute("navPage",3); // default content to be displayed in welcome.jsp
 				rd = request.getRequestDispatcher("/welcome");
 				rd.forward(request,response);
 			}

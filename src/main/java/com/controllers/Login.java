@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.thunderbolt.Config;
+import com.thunderbolt.Connect;
 
 /**
  * Servlet implementation class Login
@@ -46,11 +46,14 @@ public class Login extends HttpServlet {
 		String roll = request.getParameter("roll");
 		out.println(roll + "<br>");
 		try {
-			con = Config.getRemoteDB();
+			con = Connect.getConnection();
 			if(con!=null)
 			out.println("inside try");
 		} catch (SQLException e) {
 			out.println("inside catch");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

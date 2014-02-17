@@ -39,6 +39,10 @@ System.out.println("Welcome.jsp: navPage= 4; if this is displayed.. means no maj
 <jsp:include page="catalog_display.jsp"></jsp:include>
 <%} else if(navPage==2) {%>
 <jsp:include page="dashboard.jsp"></jsp:include>
+<%} else if(navPage==100) {%>
+<jsp:include page="book.jsp"></jsp:include>
+<%} else if(navPage==102) {%>
+<jsp:include page="review.jsp"></jsp:include>
 <%} %>
 </div>
 </div>

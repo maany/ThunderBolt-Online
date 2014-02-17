@@ -17,8 +17,8 @@ int count = (Integer)session.getAttribute("resultCount");
 <center><%=count %> Results Found</center>
 <table border="1">
 <tr>
-<th>Accession No</th>
 <th>Book Title</th>
+<th>Accession Number</th>
 <th>Author</th>
 <th>Publisher</th>
 <th>Subject</th>
@@ -34,14 +34,19 @@ while(catalog.next())
 acc = new Integer(catalog.getString(1).toString());
 %>
 <tr>
-<%for(int i=1;i<=5;i++){ %>
+<td><a href="redirect?navPage=100&acc=<%=acc%>"><%=catalog.getString(2) %></a></td>
+<%
+for(int i=1;i<=5;i++){ 
+if(i==2)
+	continue;
+%>
 <td><%=catalog.getString(i) %></td>
 <%} // for ended %>
 <%if(catalog.getInt("status")!=0) {%>
 <td>Available</td>
 <%} else {%>
 <td>Not Available</td>
-<% }  %>
+<% } %>
 <% // watch status
 WatchModel student = new WatchModel(roll);
 if(student.getWatchStatus(acc)) {

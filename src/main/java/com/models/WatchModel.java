@@ -32,7 +32,7 @@ public class WatchModel {
 			java.sql.PreparedStatement query = con.prepareStatement("select * from watch_online where roll_no = ? and acc_no = ?");
 			query.setInt(1,roll);
 			query.setInt(2,acc);
-			System.out.println(query.toString());
+			
 			ResultSet rs = query.executeQuery();
 			if(rs.next())
 			status = true;

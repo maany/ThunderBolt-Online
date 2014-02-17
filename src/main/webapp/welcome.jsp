@@ -20,7 +20,7 @@ int roll = new Integer(session.getAttribute("roll").toString());
 </div>
 
 <div class="menu" style = "width:100px;float:left;background-color:grey">
-<a href="account"><%=firstName %></a><br>
+<a href="redirect?navPage=150"><%=firstName %></a><br>
 <a href="redirect?navPage=2">Dashboard</a><br>
 <a href="redirect?navPage=3">Catalog</a><br>
 <a href="settings">Settings</a><br>
@@ -43,6 +43,8 @@ System.out.println("Welcome.jsp: navPage= 4; if this is displayed.. means no maj
 <jsp:include page="book.jsp"></jsp:include>
 <%} else if(navPage==102) {%>
 <jsp:include page="review.jsp"></jsp:include>
+<%} else if(navPage==150) {%>
+<jsp:include page="account.jsp"></jsp:include>
 <%} %>
 </div>
 </div>

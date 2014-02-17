@@ -42,8 +42,10 @@ public class URLMapper extends HttpServlet {
 		 * 100 - book.jsp
 		 * 101 - book.jsp when (watch event is triggered)
 		 * 102 - book.jsp when review is triggered.. see Review.java for detailed mapping..coz form is involved
+		 * 150 - account.jsp
 		 * the navPage used in session.setAttribure() will be loaded in content
 		 * request dispatcher changes the path followed by the request before ending up in welcome.jsp
+		 * 
 		 */
 		switch(navPage)
 		{
@@ -54,7 +56,8 @@ public class URLMapper extends HttpServlet {
 		case 41:System.out.println("inside URL Mapper for navPage 41");session.setAttribute("navPage",4);rd = request.getRequestDispatcher("watch");rd.forward(request,response);break;	// add watch from search results		
 		case 100:session.setAttribute("navPage",100);rd = request.getRequestDispatcher("book");rd.forward(request,response);break;	// 100 = display book
 		case 101:session.setAttribute("navPage",100);rd = request.getRequestDispatcher("watch");rd.forward(request,response);break;	
-		case 102:session.setAttribute("navPage", 102);rd = request.getRequestDispatcher("review");rd.forward(request,response);
+		case 102:session.setAttribute("navPage", 102);rd = request.getRequestDispatcher("review");rd.forward(request,response);break;
+		case 150:session.setAttribute("navPage",150);rd = request.getRequestDispatcher("account");rd.forward(request,response);break;
 		}
 		
 	}

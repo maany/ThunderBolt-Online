@@ -1,3 +1,4 @@
+<%@page import="com.models.WatchModel"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import= "java.sql.*;" %>
@@ -22,11 +23,15 @@ int count = (Integer)session.getAttribute("resultCount");
 <th>Publisher</th>
 <th>Subject</th>
 <th>Status</th>
+<th colspan="2">Watch</th>
 </tr>
 <%
 catalog.beforeFirst();
+int acc,roll;
+roll = new Integer(session.getAttribute("roll").toString());
 while(catalog.next())
 {
+acc = new Integer(catalog.getString(1).toString());
 %>
 <tr>
 <%for(int i=1;i<=5;i++){ %>
@@ -36,7 +41,15 @@ while(catalog.next())
 <td>Available</td>
 <%} else {%>
 <td>Not Available</td>
-<% } } //while and topmost if ended %>
+<% }  %>
+<% // watch status
+WatchModel student = new WatchModel(roll);
+if(student.getWatchStatus(acc)) {
+%>
+<td>Watching <a href ="redirect?navPage=41&acc=<%=acc%>&action=remove">unwatch</a></td>
+<%} else { %>
+<td><a href="redirect?acc=<%= acc%>&action=add&navPage=41">Watch</a></td>
+<%} } //while ended %>
 </tr>
 </table>
 </div>

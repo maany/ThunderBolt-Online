@@ -43,13 +43,16 @@ public class Review extends HttpServlet {
 		RequestDispatcher rd =null ;
 		String action = request.getParameter("action");
 		System.out.println("Review: inside controller : action = " + action);
-		switch(action)
-		{
-		case "new":  session.setAttribute("navPage",102);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);break;
-		case "edit" : session.setAttribute("navPage",102);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);break;
-		case "delete" : session.setAttribute("navPage",100);delete(acc,roll);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);break;
-		case "addButton" : System.out.println("Add Button Detected");session.setAttribute("navPage",100);add(request,roll,acc);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);break;
-		case "editButton" : session.setAttribute("navPage",100);edit(request,roll,acc);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);break;
+		if(action.compareTo("new")==0) {
+		session.setAttribute("navPage",102);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);
+		} else if(action.compareTo("edit")==0) {
+		session.setAttribute("navPage",102);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);
+		} else if(action.compareTo("delete")==0) {
+		session.setAttribute("navPage",100);delete(acc,roll);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);
+		}else if (action.compareTo("addButton")==0) {
+		 System.out.println("Add Button Detected");session.setAttribute("navPage",100);add(request,roll,acc);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);
+		} else if (action.compareTo("editButton")==0) {
+		session.setAttribute("navPage",100);edit(request,roll,acc);rd = request.getRequestDispatcher("/welcome.jsp");rd.forward(request, response);
 		}
 	}
 	private void delete(int acc,int roll)

@@ -32,13 +32,14 @@ public class URLMapper extends HttpServlet {
 		int navPage = new Integer(request.getParameter("navPage"));
 		switch(navPage)
 		{
-		case 3: session.setAttribute("navPage",3);break; // Catalog
+		case 2: session.setAttribute("navPage",2); response.sendRedirect("dashboard"); break; 
+		case 3: session.setAttribute("navPage",3);response.sendRedirect("welcome");break; // Catalog
 		case 4 : System.out.println("URIMAPPER.java : FOUND CONDITION.navPage=4 MAPPING SUCCESSFUL"); // catalog_display
-					session.setAttribute("navPage", 4);break;
+					session.setAttribute("navPage", 4);response.sendRedirect("welcome");break;
 					
 		
 		}
-		response.sendRedirect("welcome");
+		
 	}
 
 	/**

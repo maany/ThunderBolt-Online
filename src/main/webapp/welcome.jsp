@@ -21,7 +21,7 @@ int roll = new Integer(session.getAttribute("roll").toString());
 
 <div class="menu" style = "width:100px;float:left;background-color:grey">
 <a href="account"><%=firstName %></a><br>
-<a href="dashboard">Dashboard</a><br>
+<a href="redirect?navPage=2">Dashboard</a><br>
 <a href="redirect?navPage=3">Catalog</a><br>
 <a href="settings">Settings</a><br>
 <a href="logout">Logout</a><br>
@@ -37,6 +37,8 @@ if(navPage==3)
 System.out.println("Welcome.jsp: navPage= 4; if this is displayed.. means no major error in catalog");
 %>
 <jsp:include page="catalog_display.jsp"></jsp:include>
+<%} else if(navPage==2) {%>
+<jsp:include page="dashboard.jsp"></jsp:include>
 <%} %>
 </div>
 </div>

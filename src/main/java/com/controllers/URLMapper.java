@@ -54,6 +54,7 @@ public class URLMapper extends HttpServlet {
 		case 4 : System.out.println("URIMAPPER.java : FOUND CONDITION.navPage=4 MAPPING SUCCESSFUL"); // catalog_display
 					session.setAttribute("navPage", 4);response.sendRedirect("welcome");break;
 		case 41:System.out.println("inside URL Mapper for navPage 41");session.setAttribute("navPage",4);rd = request.getRequestDispatcher("watch");rd.forward(request,response);break;	// add watch from search results		
+		case 5: session.setAttribute("navPage",5);rd = request.getRequestDispatcher("welcome");rd.forward(request,response);break;
 		case 100:session.setAttribute("navPage",100);rd = request.getRequestDispatcher("book");rd.forward(request,response);break;	// 100 = display book
 		case 101:session.setAttribute("navPage",100);rd = request.getRequestDispatcher("watch");rd.forward(request,response);break;	
 		case 102:session.setAttribute("navPage", 102);rd = request.getRequestDispatcher("review");rd.forward(request,response);break;

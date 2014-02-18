@@ -78,7 +78,7 @@ while(issued.next())
 
 <center>
 <table cellspacing= 0 border =.5>
-<caption>Books I am Watching : <%=countWatched %></caption>
+<caption>Books I am Following : <%=countWatched %></caption>
 <tr>
 <th>Accession Number</th>
 <th>Book Title</th>

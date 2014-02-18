@@ -41,7 +41,7 @@ int count = (Integer)session.getAttribute("resultCount");
 <th>Publisher</th>
 <th>Subject</th>
 <th>Status</th>
-<th colspan="2">Watch</th>
+<th colspan="2">Follow Status</th>
 </tr>
 <%
 catalog.beforeFirst();
@@ -69,9 +69,9 @@ if(i==2)
 WatchModel student = new WatchModel(roll);
 if(student.getWatchStatus(acc)) {
 %>
-<td>Watching <a href ="redirect?navPage=41&acc=<%=acc%>&action=remove">unwatch</a></td>
+<td>Following <a href ="redirect?navPage=41&acc=<%=acc%>&action=remove">Unfollow?</a></td>
 <%} else { %>
-<td><a href="redirect?acc=<%= acc%>&action=add&navPage=41">Watch</a></td>
+<td><a href="redirect?acc=<%= acc%>&action=add&navPage=41">Follow</a></td>
 <%} } //while ended %>
 </tr>
 </table>

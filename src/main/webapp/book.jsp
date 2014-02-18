@@ -86,7 +86,7 @@ else
 </div>
 <br>
 <div id = "watch" >
-<h3>Watch Status</h3>
+<h3>Followers</h3>
 <ul type="disc">
 <% 
 int acc = new Integer(rs.getString("acc_no"));
@@ -95,13 +95,13 @@ int roll = new Integer(session.getAttribute("roll").toString());
 boolean isWatching = book.isWatching(roll); 
 if (isWatching) {
 %>
-<li>You are watching this book. <a href = "redirect?navPage=101&acc=<%=acc%>&action=remove ">Stop Watching?</a></li>
+<li>You are following this book. <a href = "redirect?navPage=101&acc=<%=acc%>&action=remove ">Stop Watching?</a></li>
 <%
 } else {
 %>
-<li>You are not watching this book. <a href = "redirect?acc=<%= acc%>&action=add&navPage=101">Start Watching?</a></li>
+<li>You are not following this book. <a href = "redirect?acc=<%= acc%>&action=add&navPage=101">Start Watching?</a></li>
 <%} %>
-<li> Total people watching this book : <%=book.getWatchCount() %></li>
+<li> Total people following this book : <%=book.getWatchCount() %></li>
 </ul>
 </div>
 <br>

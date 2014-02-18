@@ -11,6 +11,6 @@
 <br><br><br><br><br><br>
 <center><h1><font size="+4" color="#999999">NIT Delhi Library</font></h1></center>
 <br>
-<center><h2><font color="#FFFFFF">You Have Successfully logged out. <a href="/thunderbolt">Click here to Login again</a></font></h2></center>
+<center><h2><font color="#FFFFFF">You Have Successfully logged out. <a href="/">Click here to Login again</a></font></h2></center>
 </body>
 </html>

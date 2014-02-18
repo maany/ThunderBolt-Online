@@ -36,11 +36,11 @@
 	*/
 	
 	table {
-		overflow:hidden;
+		overflow:auto;
 		border:1px solid #d3d3d3;
 		background:#fefefe;
 		width:70%;
-		margin:.5% auto 0;
+		margin:.0% auto 0;
 		-moz-border-radius:5px; /* FF1+ */
 		-webkit-border-radius:5px; /* Saf3-4 */
 		border-radius:5px;

@@ -3,7 +3,7 @@ import java.sql.*;
 public class Connect {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException
 	{
-		Connection con = production();
+		Connection con = deployment();
 		return con;
 	}
 	/**

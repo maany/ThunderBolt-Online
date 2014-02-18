@@ -6,16 +6,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="tablepage.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript">
+ $(function() {
+		/* For zebra striping */
+        $("table tr:nth-child(odd)").addClass("odd-row");
+		/* For cell text alignment */
+		$("table td:first-child, table th:first-child").addClass("first");
+		/* For removing the last border */
+		$("table td:last-child, table th:last-child").addClass("last");
+});
+</script>
+<style>
+th{
+background-color:#999;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
-<div id='search_results'>
+
 <%
 ResultSet catalog = (ResultSet)session.getAttribute("catalogTable");
 int count = (Integer)session.getAttribute("resultCount");
 %>
 <center><%=count %> Results Found</center>
-<table border="1">
+<div id="content">
+<table cellspacing=0 border="1">
 <tr>
 <th>Book Title</th>
 <th>Accession Number</th>

@@ -5,11 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
 <title>Catalog</title>
 </head>
 <body>
-<div id='filters' align='left' style="background-color:grey">
-<center>Search Filters</center><br>
+<center><h2>Catalog</h2></center>
+<br>
+<div id='filters' align='left' style="background-color:#666;color:white">
+<center><h3><font size="+2" color="#FFFFFF">Search Filters</font></h3></center><br>
+<center>
 <form action="catalog" method="post">
 Keyword : <input type="text" name="keyword"/><br><br>
 In : <select name="in">
@@ -30,6 +35,7 @@ Order By : <select name="orderBy">
 Sort By : <input type="radio" name="sortBy" value="ASC" checked> Ascending <input type="radio" name="sortBy" value="DESC">Descending <br><br>
 <center><input type="submit" value="Search"></center><br>
 </form>
+</center>
 </div>
 
 </body>

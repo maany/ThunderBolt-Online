@@ -4,7 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 <title>ThunderBolt : Logged in as <%=session.getAttribute("firstName") %></title>
+<script type="text/javascript">
+function select(id)
+{
+	var element = document.getElementById(id);
+	element.className = "current_page_item" ;
+}
+</script>
 </head>
 <%
 // creating and initializing page variables
@@ -13,20 +25,24 @@ int roll = new Integer(session.getAttribute("roll").toString());
 %>
 
 <body>
-<div id = 'container' style="width:1500px;background-color:black">
-<div id='container' style="width:1000px" align='center'>
-<div id = 'header' style="height:100px" align='center'>
-<h1>NIT Delhi Library</h1>
-</div>
+<div id = "page" class = "container">
+	<div id = "header">
+    	<div id="logo">
+		<h1>NIT Delhi Library</h1>
+		</div>
 
-<div class="menu" style = "width:100px;float:left;background-color:grey">
-<a href="redirect?navPage=150"><%=firstName %></a><br>
-<a href="redirect?navPage=2">Dashboard</a><br>
-<a href="redirect?navPage=3">Catalog</a><br>
-<a href="redirect?navPage=5">Settings</a><br>
-<a href="logout">Logout</a><br>
-</div>
-<div class="content" style = "float:left;width:900">
+	<div id="menu">
+	<ul>
+	<li id="m1"><a href="redirect?navPage=150" onClick="select('m1')"><%=firstName %></a>			</li>
+	<li id="m2"><a href="redirect?navPage=2" onClick="select('m2')">Dashboard</a></li>
+	<li id = "m3"><a href="redirect?navPage=3" onClick="select('m3')">Catalog</a></li>
+	<li id="m4"><a href="redirect?navPage=5" onClick="select('m4')">Settings</a></li>
+	<li id="m5"><a href="logout" onClick="select('m5')">Logout</a></li>
+	</ul>
+	</div>
+	</div>
+    
+<div id="main">
 <% // in session add a var page, page name will decide what to jsp:include 
 int navPage = (Integer)session.getAttribute("navPage");
 if(navPage==3)
@@ -48,7 +64,6 @@ System.out.println("Welcome.jsp: navPage= 4; if this is displayed.. means no maj
 <%} else if(navPage==5) {%>
 <jsp:include page="settings.jsp"></jsp:include>
 <%} %>
-</div>
 </div>
 </div>
 </body>

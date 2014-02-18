@@ -6,6 +6,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="tablepage.css">
+<style>
+th{
+background-color:#999;
+}
+caption{animation:ease;
+color:#666
+text-emphasis:#333
+
+}
+</style>
 </head>
 <body>
 <% 
@@ -26,10 +37,12 @@ int countWatched = student.getCount(watched);
 int countReviewed = student.getCount(reviewed);
 %>
 
-
-<div id = " currentlyIssued" class="header">
+<center><h2><font size="+2">DASHBOARD</font></h2></center>
+<br>
 <h3>Books Currently Issued : <%=countCurrentlyIssued %></h3>
-<table border =1>
+<div id="content">
+<center>
+<table cellspacing= 0 border =.5>
 <tr>
 <th>Accession Number</th>
 <th>Book Title</th>
@@ -57,12 +70,13 @@ while(issued.next())
 }
 %>
 </table>
-</div>
+</center>
+<br>
 
 
-<div id = "watch" class="header">
 <h3>Books I am Watching : <%=countWatched %></h3>
-<table border =1>
+<center>
+<table cellspacing= 0 border =.5>
 <tr>
 <th>Accession Number</th>
 <th>Book Title</th>
@@ -88,12 +102,14 @@ while(watched.next())
 } }
 %>
 </table>
-</div>
+</center>
+<br>
 
 
-<div id = "reviewed" class="header">
+
 <h3>Books I have Reviewed : <%=countReviewed %></h3>
-<table border =1>
+<center>
+<table cellspacing= 0 border =.5>
 <tr>
 <th>Accession Number</th>
 <th>Book Title</th>
@@ -114,12 +130,13 @@ while(reviewed.next())
 }
 %>
 </table>
-</div>
+</center>
+<br>
 
 
-<div class="header">
 <h3>Books Previously Issued : <%=countPreviouslyIssued %></h3>
-<table border =1>
+<center>
+<table cellspacing= 0 border =.5>
 <tr>
 <th>Accession Number</th>
 <th>Book Title</th>
@@ -128,7 +145,7 @@ while(reviewed.next())
 <th>Issued On</th>
 <th>Due Date</th>
 <th>Return Date</th>
-<th>Fine</th>
+
 </tr>
 <%
 previouslyIssued.beforeFirst();
@@ -148,6 +165,7 @@ while(previouslyIssued.next())
 }
 %>
 </table>
+</center>
 </div>
 </body>
 </html>

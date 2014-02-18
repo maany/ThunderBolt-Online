@@ -5,6 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="tablepage.css">
+<style>
+th{
+background-color:#999;
+}
+caption{animation:ease;
+color:#666
+text-emphasis:#333
+
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -13,9 +24,11 @@ BookModel book = (BookModel)session.getAttribute("book");
 ResultSet rs = book.getDetails();
 rs.first();
 %>
-<div id='book_details'>
-<h3>Book Details</h3>
-<table border="1">
+<div id="content">
+<h3>Book Details : <%=rs.getString("title") %></h3>
+<br>
+<center>
+<table border=.5 cellspacing=0>
 <tr>
 <th>Book Title</th>
 <td><%=rs.getString("title") %></td>
@@ -69,8 +82,9 @@ else
 <td><%=rs.getString("ISBN") %></td>
 </tr>
 </table>
+</center>
 </div>
-
+<br>
 <div id = "watch" >
 <h3>Watch Status</h3>
 <ul type="disc">
@@ -90,8 +104,8 @@ if (isWatching) {
 <li> Total people watching this book : <%=book.getWatchCount() %></li>
 </ul>
 </div>
-
-<div id="reviews">
+<br>
+<div id="content">
 <h3>Reviews</h3>
 <ul>
 <li>Total Number of reviews for this book :<%=book.getReviewCount() %></li>
@@ -103,7 +117,8 @@ if (!book.isReviewed(roll))
 <li><a href="redirect?acc=<%=acc%>&navPage=102&action=new"> Write a review for this book </a></li>
 <%}%>
 </ul>
-<table>
+<center>
+<table border=.5 cellspacing=0>
 <tr>
 <th>Name</th>
 <th>Roll No</th>
@@ -145,6 +160,7 @@ if (roll==rollNo)
 <%} } } //end while %>
 
 </table>
+</center>
 </div>
 </body>
 </html>

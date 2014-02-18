@@ -5,6 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="tablepage.css">
+<style>
+th{
+background-color:#999;
+}
+caption{animation:ease;
+color:#666
+text-emphasis:#333
+
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -13,8 +24,12 @@ AccountModel model = (AccountModel)session.getAttribute("student");
 ResultSet student = model.getDetails();
 student.first();
 %>
-<h3>Student Details : <%=student.getString("First Name") %></h3>
-<table>
+
+<center><h3>Student Details : <%=student.getString("First Name") %></h3></center>
+<br>
+<center>
+<div id="content">
+  <table border="1" cellspacing=0>
 <caption>Basic Information</caption>
 <tr>
 <th>First Name</th>
@@ -46,7 +61,10 @@ student.first();
 <td><%=student.getString("Category") %></td>
 </tr>
 </table>
-<table>
+</div>
+<br>
+<div id="content">
+<table cellspacing=0 border=".5">
 <caption>Academic Information</caption>
 <tr>
 <th>Programme</th>
@@ -65,7 +83,10 @@ student.first();
 <td><%=student.getString("Semester") %></td>
 </tr>
 </table>
-<table>
+</div>
+<br>
+<div id="content">
+<table cellspacing=0 border=".5">
 <caption>Contact Information</caption>
 <tr>
 <th>Primary Address</th>
@@ -84,6 +105,9 @@ student.first();
 <td><%=student.getString("E-Mail") %></td>
 </tr>
 </table>
-NOTE - if the information displayed is not accourate, contact the library.
+</div>
+<br>
+<h5>NOTE - if the information displayed is not accourate, contact the library.</h5>
+</center>
 </body>
 </html>

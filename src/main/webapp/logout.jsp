@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="style.css">
 <title>Logout</title>
 </head>
 <body>
-You Have Successfully logged out. <a href="login.jsp">Click here to Login again</a>
+<br><br><br><br><br><br>
+<center><h1><font size="+4" color="#999999">NIT Delhi Library</font></h1></center>
+<br>
+<center><h2><font color="#FFFFFF">You Have Successfully logged out. <a href="/thunderbolt">Click here to Login again</a></font></h2></center>
 </body>
 </html>

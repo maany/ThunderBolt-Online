@@ -99,7 +99,7 @@ if (isWatching) {
 <%
 } else {
 %>
-<li>You are not following this book. <a href = "redirect?acc=<%= acc%>&action=add&navPage=101">Start Watching?</a></li>
+<li>You are not following this book. <a href = "redirect?acc=<%= acc%>&action=add&navPage=101">Start Following?</a></li>
 <%} %>
 <li> Total people following this book : <%=book.getWatchCount() %></li>
 </ul>

@@ -4,7 +4,7 @@ public class Connect {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException
 	{
 		Connection con = deployment();
-		return con;
+		return con; //
 	}
 	/**
 	 * Connect to openshift mysql server database

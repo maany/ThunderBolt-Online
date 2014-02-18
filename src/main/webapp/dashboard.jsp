@@ -40,9 +40,9 @@ int countReviewed = student.getCount(reviewed);
 <center><h2><font size="+2">DASHBOARD</font></h2></center>
 <br>
 
-<div id="content">
-<center>
-<table cellspacing= 0 border =.5>
+<div id="content" style="margin-left:-10%;">
+
+<table cellspacing= 0 border =.5 >
 <caption>Books Currently Issued : <%=countCurrentlyIssued %></caption>
 <tr>
 <th>Accession Number</th>
@@ -71,7 +71,7 @@ while(issued.next())
 }
 %>
 </table>
-</center>
+
 <br>
 
 

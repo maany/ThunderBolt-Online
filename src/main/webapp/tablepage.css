@@ -28,7 +28,7 @@
 	
 	a {color:#666;}
 	
-	#content {width:300%; max-width:1000px; margin:6% auto 0;}
+	#content {width:300%; max-width:1000px; margin-left:-10%;}
 	
 	/*
 	Pretty Table Styling
@@ -36,11 +36,11 @@
 	*/
 	
 	table {
-		overflow:auto;
+		overflow:hidden;
 		border:1px solid #d3d3d3;
 		background:#fefefe;
 		width:70%;
-		margin:.0% auto 0;
+		margin:5% auto 0;
 		-moz-border-radius:5px; /* FF1+ */
 		-webkit-border-radius:5px; /* Saf3-4 */
 		border-radius:5px;

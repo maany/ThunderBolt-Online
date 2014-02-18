@@ -39,10 +39,11 @@ int countReviewed = student.getCount(reviewed);
 
 <center><h2><font size="+2">DASHBOARD</font></h2></center>
 <br>
-<h3>Books Currently Issued : <%=countCurrentlyIssued %></h3>
+
 <div id="content">
 <center>
 <table cellspacing= 0 border =.5>
+<caption>Books Currently Issued : <%=countCurrentlyIssued %></caption>
 <tr>
 <th>Accession Number</th>
 <th>Book Title</th>
@@ -74,9 +75,10 @@ while(issued.next())
 <br>
 
 
-<h3>Books I am Watching : <%=countWatched %></h3>
+
 <center>
 <table cellspacing= 0 border =.5>
+<caption>Books I am Watching : <%=countWatched %></caption>
 <tr>
 <th>Accession Number</th>
 <th>Book Title</th>
@@ -107,9 +109,10 @@ while(watched.next())
 
 
 
-<h3>Books I have Reviewed : <%=countReviewed %></h3>
+
 <center>
 <table cellspacing= 0 border =.5>
+<caption>Books I have Reviewed : <%=countReviewed %></caption>
 <tr>
 <th>Accession Number</th>
 <th>Book Title</th>
@@ -134,9 +137,10 @@ while(reviewed.next())
 <br>
 
 
-<h3>Books Previously Issued : <%=countPreviouslyIssued %></h3>
+
 <center>
 <table cellspacing= 0 border =.5>
+<caption>Books Previously Issued : <%=countPreviouslyIssued %></caption>
 <tr>
 <th>Accession Number</th>
 <th>Book Title</th>
@@ -145,7 +149,6 @@ while(reviewed.next())
 <th>Issued On</th>
 <th>Due Date</th>
 <th>Return Date</th>
-
 </tr>
 <%
 previouslyIssued.beforeFirst();
@@ -161,9 +164,7 @@ while(previouslyIssued.next())
 <td><%=previouslyIssued.getString("due_date") %></td>
 <td><%=previouslyIssued.getString("return_date") %></td>
 </tr>
-<%	
-}
-%>
+<%}%>
 </table>
 </center>
 </div>

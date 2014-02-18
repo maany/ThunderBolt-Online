@@ -33,7 +33,7 @@ int count = (Integer)session.getAttribute("resultCount");
 %>
 <center><%=count %> Results Found</center>
 <div id="content">
-<table cellspacing=0 border="1">
+  <table cellspacing=0 border="1">
 <tr>
 <th>Book Title</th>
 <th>Accession Number</th>

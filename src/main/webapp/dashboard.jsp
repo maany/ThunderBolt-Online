@@ -46,7 +46,7 @@ while(issued.next())
 %>
 <tr>
 <td><%=issued.getInt("acc_no") %></td>
-<td><%=issued.getString("title") %></td>
+<td><a href="redirect?navPage=100&acc=<%=issued.getInt("acc_no")%>"><%=issued.getString("title") %></a></td>
 <td><%=issued.getString("author") %></td>
 <td><%=issued.getString("publisher") %></td>
 <td><%=issued.getString("issue_date") %></td>
@@ -77,7 +77,7 @@ while(watched.next())
 %>
 <tr>
 <td><%=watched.getInt("acc_no") %></td>
-<td><%=watched.getString("title") %></td>
+<td><a href="redirect?navPage=100&acc=<%=watched.getInt("acc_no")%>"><%=watched.getString("title") %></a></td>
 <td><%=watched.getString("author") %></td>
 <td><%=watched.getString("publisher") %></td>
 <%if(watched.getInt("status")!=0) {%>
@@ -107,7 +107,7 @@ while(reviewed.next())
 %>
 <tr>
 <td><%=reviewed.getInt("acc_no") %></td>
-<td><%=reviewed.getString("title") %></td>
+<td><a href="redirect?navPage=100&acc=<%=reviewed.getInt("acc_no")%>"><%=reviewed.getString("title") %></a></td>
 <td><%=reviewed.getString("author") %></td>
 <td><%=reviewed.getString("publisher") %></td>
 <%	
@@ -137,7 +137,7 @@ while(previouslyIssued.next())
 %>
 <tr>
 <td><%=previouslyIssued.getInt("acc_no") %></td>
-<td><%=previouslyIssued.getString("title") %></td>
+<td><a href="redirect?navPage=100&acc=<%=previouslyIssued.getInt("acc_no")%>"><%=previouslyIssued.getString("title") %></a></td>
 <td><%=previouslyIssued.getString("author") %></td>
 <td><%=previouslyIssued.getString("publisher") %></td>
 <td><%=previouslyIssued.getString("issue_date") %></td>
